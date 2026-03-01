@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZettaBiller — Enterprise Telecom Billing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+    body { background:#fff; color:#111; line-height:1.6; }
+
+    header {
+      width:100%; display:flex; justify-content:space-between; align-items:center;
+      padding:20px 40px; position:fixed; top:0; left:0; background:#fff; z-index:1000;
+      border-bottom:1px solid #eee;
+    }
+    header .logo { font-size:1.6rem; font-weight:700; color:#000; }
+    header nav a {
+      margin-left:30px; text-decoration:none; font-weight:600; color:#333;
+    }
+
+    .hero {
+      height:90vh; display:flex; align-items:center; justify-content:center;
+      background:#fafafa; padding:0 40px; text-align:center;
+    }
+    .hero h1 { font-size:3rem; font-weight:700; margin-bottom:16px; }
+    .hero p { font-size:1.2rem; margin-bottom:24px; color:#555; }
+    .hero .btn {
+      display:inline-block; padding:14px 28px; background:#0070f3; color:#fff;
+      text-decoration:none; border-radius:6px; font-weight:600;
+    }
+
+    .features {
+      padding:80px 40px; background:#fff;
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:40px;
+    }
+    .features .card {
+      padding:24px; border:1px solid #eee; border-radius:8px;
+    }
+    .features .card h3 { font-size:1.3rem; color:#000; margin-bottom:12px; }
+    .features .card p { color:#555; }
+
+    footer {
+      padding:24px 40px; text-align:center; color:#666; font-size:.9rem;
+      border-top:1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ZettaBiller</div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#contact">Contact</a>
+    <a href="#login">Login</a>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div>
+    <h1>Enterprise Telecom Billing & Revenue Engine</h1>
+    <p>Powerful, cloud-ready billing platform designed for telcos, MVNOs, ISPs, and wholesale operators.</p>
+    <a href="#features" class="btn">Explore Features</a>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="card">
+    <h3>Customer Management</h3>
+    <p>Manage customer profiles, services, usage, billing cycles, and account status with ease.</p>
+  </div>
+  <div class="card">
+    <h3>Usage Tracking</h3>
+    <p>Real-time usage ingestion and mediation with flexible rating and charging rules.</p>
+  </div>
+  <div class="card">
+    <h3>Billing Automation</h3>
+    <p>Recurring billing, invoice generation, credit control, and payment reconciliation.</p>
+  </div>
+  <div class="card">
+    <h3>Finance & Revenue</h3>
+    <p>ARPU, churn metrics, outstanding analysis, and revenue assurance & reporting.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Zorrsh Business Solutions Private Limited. All rights reserved.
+</footer>
+
+</body>
+</html>
