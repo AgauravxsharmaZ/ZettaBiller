@@ -1,4 +1,5 @@
-// ------ Partner Sign-In Modal & Browser Detection ------
+// ------ Partner Sign-In Modal + Browser + IP Detection (FINAL) ------
+
 document.addEventListener("DOMContentLoaded", function () {
 
   const modal = document.getElementById("signInModal");
@@ -7,9 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const continueBtn = document.getElementById("continueBtn");
   const browserNote = document.getElementById("browserNote");
 
-  // ----- OPEN MODAL -----
+  /* ---------------- OPEN / CLOSE MODAL ---------------- */
+
   if (openBtn && modal) {
-    openBtn.addEventListener("click", function (e) {
+    openBtn.addEventListener("click", e => {
       e.preventDefault();
       modal.style.display = "flex";
       companyInput.value = "";
@@ -17,57 +19,97 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ----- CLOSE MODAL -----
-  modal.addEventListener("click", function (e) {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
+  if (modal) {
+    modal.addEventListener("click", e => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+  }
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && modal) modal.style.display = "none";
   });
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      modal.style.display = "none";
-    }
-  });
+  /* ---------------- CONTINUE ---------------- */
 
-  // ----- CONTINUE -----
-  continueBtn.addEventListener("click", function () {
-    const tenant = companyInput.value.trim().toLowerCase();
-    if (!tenant) return;
+  if (continueBtn) {
+    continueBtn.addEventListener("click", () => {
+      const tenant = companyInput.value.trim().toLowerCase();
+      if (!tenant) return;
 
-    continueBtn.textContent = "Loading…";
-    continueBtn.disabled = true;
+      continueBtn.textContent = "Loading…";
+      continueBtn.disabled = true;
 
-    setTimeout(function () {
-      window.location.href = "https://" + tenant + ".zettabiller.com";
-    }, 400);
-  });
+      setTimeout(() => {
+        window.location.href = "https://" + tenant + ".zettabiller.com";
+      }, 400);
+    });
+  }
 
-  // ----- BROWSER DETECTION -----
-  if (browserNote) {
+  /* ---------------- BROWSER DETECTION ---------------- */
+
+  function detectBrowser() {
     const ua = navigator.userAgent;
-    let browser = "Unknown";
+    let name = "Browser";
     let version = "";
 
-    if (/Chrome\/(\d+)/.test(ua) && !/Edg/.test(ua)) {
-      browser = "Chrome";
+    if (/Edg\/(\d+)/.test(ua)) {
+      name = "Microsoft Edge";
+      version = ua.match(/Edg\/(\d+)/)[1];
+    } else if (/Chrome\/(\d+)/.test(ua)) {
+      name = "Chrome";
       version = ua.match(/Chrome\/(\d+)/)[1];
     } else if (/Firefox\/(\d+)/.test(ua)) {
-      browser = "Firefox";
+      name = "Firefox";
       version = ua.match(/Firefox\/(\d+)/)[1];
     } else if (/Safari\/(\d+)/.test(ua) && /Version\/(\d+)/.test(ua)) {
-      browser = "Safari";
+      name = "Safari";
       version = ua.match(/Version\/(\d+)/)[1];
-    } else if (/Edg\/(\d+)/.test(ua)) {
-      browser = "Edge";
-      version = ua.match(/Edg\/(\d+)/)[1];
     }
 
+    return { name, version };
+  }
+
+  /* ---------------- IP DETECTION (SAFE) ---------------- */
+
+  function detectIP() {
+    return fetch("https://api.ipify.org?format=json")
+      .then(r => r.json())
+      .then(d => d.ip)
+      .catch(() => null);
+  }
+
+  /* ---------------- RENDER NOTE ---------------- */
+
+  function renderNote(browser, ip) {
+    if (!browserNote) return;
+
+    browserNote.className = "browser-note"; // reset
+    browserNote.classList.add(browserClass(browser.name));
+
     browserNote.textContent =
-      "Optimized for modern browsers. You are using " +
-      browser +
-      (version ? " " + version : "") +
-      ".";
+      "You are using " +
+      browser.name +
+      " " +
+      browser.version +
+      (ip ? " · IP " + ip : "");
+  }
+
+  function browserClass(name) {
+    if (name.includes("Edge")) return "browser-edge";
+    if (name === "Chrome") return "browser-chrome";
+    if (name === "Firefox") return "browser-firefox";
+    if (name === "Safari") return "browser-safari";
+    return "browser-generic";
+  }
+
+  /* ---------------- INIT ---------------- */
+
+  if (browserNote) {
+    const browser = detectBrowser();
+
+    detectIP().then(ip => {
+      renderNote(browser, ip);
+    });
   }
 
 });
