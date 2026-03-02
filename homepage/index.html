@@ -196,6 +196,38 @@
     </div>
   </div>
 </footer>
+ <!-- Partner Access Modal -->
+<!-- Partner Sign In Trigger -->
+<button id="openSignIn" class="partner-signin-btn">
+  Partner Sign In
+</button>
+
+<!-- Partner Access Modal -->
+<div class="modal" id="signInModal">
+  <div class="modal-surface">
+
+    <div class="modal-header">
+      <h1>ZettaBiller Partner Access</h1>
+      <p>Continue to your ZettaBiller workspace</p>
+    </div>
+
+    <div class="workspace-input">
+      <input
+        type="text"
+        id="companyInput"
+        placeholder="yourcompany"
+        autocomplete="off"
+      />
+      <span>.zettabiller.com</span>
+    </div>
+
+    <button id="continueBtn" class="continue-btn">
+      Continue
+    </button>
+
+    <div class="browser-note" id="browserNote"></div>
+
+  </div>
+</div>
+
 <script src="assets/js/main.js"></script>
-</body>
-</html>

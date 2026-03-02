@@ -1,63 +1,73 @@
-// -----------------------------
-// THEME TOGGLE (DAY / NIGHT)
-// -----------------------------
+// ------ Partner Sign-In Modal & Browser Detection ------
+document.addEventListener("DOMContentLoaded", function () {
 
-const themeToggle = document.getElementById("themeToggle")
+  const modal = document.getElementById("signInModal");
+  const openBtn = document.getElementById("openSignIn");
+  const companyInput = document.getElementById("companyInput");
+  const continueBtn = document.getElementById("continueBtn");
+  const browserNote = document.getElementById("browserNote");
 
-if (themeToggle) {
-  const savedTheme = localStorage.getItem("theme")
-
-  if (savedTheme === "light") {
-    document.body.classList.add("light")
-    themeToggle.textContent = "☀️"
-  } else {
-    themeToggle.textContent = "🌙"
+  // ----- OPEN MODAL -----
+  if (openBtn && modal) {
+    openBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      modal.style.display = "flex";
+      companyInput.value = "";
+      companyInput.focus();
+    });
   }
 
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("light")
-
-    const isLight = document.body.classList.contains("light")
-    themeToggle.textContent = isLight ? "☀️" : "🌙"
-    localStorage.setItem("theme", isLight ? "light" : "dark")
-  })
-}
-
-// -----------------------------
-// SIGN IN MODAL
-// -----------------------------
-
-const modal = document.getElementById("signInModal")
-const openButtons = document.querySelectorAll("#openSignIn, #openSignInAlt")
-const companyInput = document.getElementById("companyInput")
-const continueBtn = document.getElementById("continueBtn")
-
-openButtons.forEach(btn => {
-  if (!btn) return
-  btn.addEventListener("click", () => {
-    modal.style.display = "flex"
-    companyInput.focus()
-  })
-})
-
-if (modal) {
-  modal.addEventListener("click", e => {
+  // ----- CLOSE MODAL -----
+  modal.addEventListener("click", function (e) {
     if (e.target === modal) {
-      modal.style.display = "none"
+      modal.style.display = "none";
     }
-  })
-}
+  });
 
-if (continueBtn) {
-  continueBtn.addEventListener("click", () => {
-    const tenant = companyInput.value.trim().toLowerCase()
-    if (!tenant) return
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      modal.style.display = "none";
+    }
+  });
 
-    continueBtn.textContent = "Loading..."
-    continueBtn.disabled = true
+  // ----- CONTINUE -----
+  continueBtn.addEventListener("click", function () {
+    const tenant = companyInput.value.trim().toLowerCase();
+    if (!tenant) return;
 
-    setTimeout(() => {
-      window.location.href = "https://" + tenant + ".zettabiller.com"
-    }, 500)
-  })
-}
+    continueBtn.textContent = "Loading…";
+    continueBtn.disabled = true;
+
+    setTimeout(function () {
+      window.location.href = "https://" + tenant + ".zettabiller.com";
+    }, 400);
+  });
+
+  // ----- BROWSER DETECTION -----
+  if (browserNote) {
+    const ua = navigator.userAgent;
+    let browser = "Unknown";
+    let version = "";
+
+    if (/Chrome\/(\d+)/.test(ua) && !/Edg/.test(ua)) {
+      browser = "Chrome";
+      version = ua.match(/Chrome\/(\d+)/)[1];
+    } else if (/Firefox\/(\d+)/.test(ua)) {
+      browser = "Firefox";
+      version = ua.match(/Firefox\/(\d+)/)[1];
+    } else if (/Safari\/(\d+)/.test(ua) && /Version\/(\d+)/.test(ua)) {
+      browser = "Safari";
+      version = ua.match(/Version\/(\d+)/)[1];
+    } else if (/Edg\/(\d+)/.test(ua)) {
+      browser = "Edge";
+      version = ua.match(/Edg\/(\d+)/)[1];
+    }
+
+    browserNote.textContent =
+      "Optimized for modern browsers. You are using " +
+      browser +
+      (version ? " " + version : "") +
+      ".";
+  }
+
+});
