@@ -113,3 +113,74 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+const modal = document.getElementById("demoModal");
+const openBtn = document.getElementById("openDemo");
+const closeBtn = document.getElementById("closeDemo");
+
+openBtn.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+// =======================================
+// REQUEST DEMO MODAL LOGIC
+// =======================================
+(function(){
+
+const modal = document.getElementById("demoModal")
+const openBtn = document.getElementById("openDemo")
+const closeBtn = document.getElementById("closeDemo")
+
+const form = document.getElementById("demoForm")
+const success = document.getElementById("demoSuccess")
+const refText = document.getElementById("refText")
+
+if(openBtn){
+
+openBtn.onclick = () => {
+modal.style.display = "flex"
+}
+
+}
+
+if(closeBtn){
+
+closeBtn.onclick = () => {
+modal.style.display = "none"
+}
+
+}
+
+window.onclick = function(e){
+
+if(e.target === modal){
+modal.style.display = "none"
+}
+
+}
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault()
+
+const ref = "ZB-" + Math.floor(100000 + Math.random()*900000)
+
+form.style.display = "none"
+
+success.style.display = "block"
+
+refText.innerText =
+"Please check your mailbox for your reference code: " + ref
+
+})
+
+})();

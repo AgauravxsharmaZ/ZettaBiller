@@ -3,7 +3,7 @@
 <head>
   <meta charset=utf-8>
   <meta name=viewport content="width=device-width, initial-scale=1.0">
-  <title>ZettaBiller | Your Biling Engine.</title>
+  <title>ZettaBiller | Real Time Billing Engine.</title>
 
   <link rel=stylesheet href="assets/css/style.css">
 </head>
@@ -21,46 +21,144 @@
     <span class="logo">ZettaBiller</span>
   </div>
 
-  <!-- Perfectly centered navigation -->
-  <nav class="header-nav">
-    <a class="nav-item active" href="#">Product</a>
-    <a class="nav-item" href="#">Solutions</a>
-    <a class="nav-item" href="#">Pricing</a>
-    <a class="nav-item" href="#">Customers</a>
-    <a class="nav-item" href="#">Contact</a>
-  </nav>
+ <!-- HEADER -->
 
-  <div class="header-actions">
+<nav class="header-nav">
+  <a class="nav-item active" href="#">Product</a>
+  <a class="nav-item" href="#">Solutions</a>
+  <a class="nav-item" href="#">Pricing</a>
+  <a class="nav-item" href="#">Customers</a>
+  <a class="nav-item" href="#">Contact</a>
+</nav>
+
+<div class="header-actions">
   <button class="primary-btn" id="openSignIn">
-  Partner Sign In
-</button>
+    Partner Sign In
+  </button>
 </div>
+
 </header>
 
-<section class=page-title>
-  <h1>Welcome to ZettaBiller</h1>
-  <p>Enterprise telecom billing, built with precision.</p>
-</section>
 
-<section class=hero>
+<!-- HERO SECTION -->
+
+<section class="hero">
+
   <div class="hero-copy">
-  <h1>
-    Telecom billing built for<br>
-    <span>accuracy at scale</span>
-  </h1>
 
-  <p>
-    ZettaBiller is a modular B2B telecom billing platform designed for
-    high-volume usage rating, reconciliation, and audit-ready invoicing.
-  </p>
+    <h1>
+      Telecom billing built for<br>
+      <span>accuracy at scale</span>
+    </h1>
 
-  <div class="hero-actions">
-    <button class="primary-btn">Request Demo</button>
-    <button class="secondary-btn" id="openSignInAlt">Partner Sign In</button>
+    <p>
+      ZettaBiller is a modular B2B telecom billing platform designed for
+      high-volume usage rating, reconciliation, and audit-ready invoicing.
+    </p>
+
+    <div class="hero-actions">
+      <button class="primary-btn" id="openDemo">
+        Request Demo
+      </button>
+    </div>
+
   </div>
-</div>
-  <div class=hero-visual></div>
+
+  <div class="hero-visual"></div>
+
 </section>
+
+<!-- REQUEST DEMO MODAL -->
+
+<div id="demoModal" class="zb-demo-modal">
+
+<div class="zb-demo-card">
+
+<div class="zb-demo-header">
+<h2>Request a Demo</h2>
+<span id="closeDemo" class="zb-demo-close">✕</span>
+</div>
+
+<form id="demoForm" class="zb-demo-form">
+
+<!-- NAME -->
+
+<div class="zb-grid">
+
+<input type="text" placeholder="First Name" required>
+<input type="text" placeholder="Last Name" required>
+
+</div>
+
+
+<!-- PHONE + EMAIL -->
+
+<div class="zb-grid">
+
+<div class="zb-phone">
+
+<select class="zb-country">
+
+<option value="+1">+1</option>
+<option value="+44">+44</option>
+<option value="+91" selected>+91</option>
+<option value="+971">+971</option>
+
+</select>
+
+<input type="tel" placeholder="Mobile Number" required>
+
+</div>
+
+<input type="email" placeholder="Work Email" required>
+
+</div>
+
+
+<!-- COMPANY FULL WIDTH -->
+
+<input class="zb-company" type="text" placeholder="Company Name">
+
+
+<!-- CONSENT -->
+
+<div class="zb-consent">
+
+<input type="checkbox" required>
+
+<p>
+By submitting this request you agree that ZettaBiller may contact you via phone,
+SMS or email regarding your demo request.
+</p>
+
+</div>
+
+
+<button type="submit" class="zb-submit">
+Submit Demo Request
+</button>
+
+</form>
+
+
+<!-- SUCCESS -->
+
+<div id="demoSuccess" class="zb-success">
+
+<div class="zb-check">✓</div>
+
+<h3>Request Submitted</h3>
+
+<p id="refText"></p>
+
+<p class="zb-note">
+We will contact you soon. You are one step closer to experiencing a powerful telecom billing environment.
+</p>
+
+</div>
+
+</div>
+</div>
 
 <!-- WHO IT IS FOR -->
 <section>
@@ -194,6 +292,7 @@
       <a href="#">Security</a>
       <a href="#">Compliance</a>
     </div>
+
   </div>
 </footer>
 <!-- Partner Access Modal -->
