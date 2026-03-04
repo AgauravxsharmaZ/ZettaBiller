@@ -15,20 +15,23 @@
   <span>✨ Product update: simplified pricing is live</span>
   <a href="#">Learn more →</a>
 </div>
-
+<div class="top-accent"></div>
+<!-- Logo -->
 <header class="site-header">
-  <div class="header-left">
-    <span class="logo">ZettaBiller</span>
-  </div>
+<div class="header-left">
+<img 
+src="assets/images/logo.png"
+alt="ZettaBiller Logo"
+class="site-logo">
+</div>
 
- <!-- HEADER -->
-
+<!-- HEADER -->
 <nav class="header-nav">
-  <a class="nav-item active" href="#">Product</a>
+  <a class="nav-item active" href="#">About Us</a>
+  <a class="nav-item" href="#">Product</a>
   <a class="nav-item" href="#">Solutions</a>
   <a class="nav-item" href="#">Pricing</a>
-  <a class="nav-item" href="#">Customers</a>
-  <a class="nav-item" href="#">Contact</a>
+  <a class="nav-item" href="#">Case studies</a>
 </nav>
 
 <div class="header-actions">
@@ -39,32 +42,66 @@
 
 </header>
 
+<!-- PARTNER MODAL -->
+<div class="modal" id="signInModal">
+
+  <div class="modal-surface">
+
+    <button class="modal-close" id="closeSignIn">✕</button>
+
+    <h1 class="modal-title">ZettaBiller Partner Access</h1>
+    <p class="modal-sub">Continue to your ZettaBiller workspace</p>
+
+    <div class="workspace-input">
+      <input
+        type="text"
+        id="companyInput"
+        placeholder="yourcompany"
+        autocomplete="off"
+      />
+      <span>.zettabiller.com</span>
+    </div>
+
+    <button id="continueBtn" class="continue-btn">
+      Continue
+    </button>
+
+    <div id="redirectMsg" class="redirect-msg"></div>
+
+    <div class="browser-note" id="browserNote"></div>
+
+  </div>
+
+</div>
 
 <!-- HERO SECTION -->
 
 <section class="hero">
 
-  <div class="hero-copy">
+<div class="hero-inner">
 
-    <h1>
-      Telecom billing built for<br>
-      <span>accuracy at scale</span>
-    </h1>
+<div class="hero-copy">
 
-    <p>
-      ZettaBiller is a modular B2B telecom billing platform designed for
-      high-volume usage rating, reconciliation, and audit-ready invoicing.
-    </p>
+<h1>
+  <span>Built for Accuracy. Scaled for Volume. Designed for Control.</span>
+</h1>
 
-    <div class="hero-actions">
-      <button class="primary-btn" id="openDemo">
-        Request Demo
-      </button>
-    </div>
+<p> ZettaBiller is a high performance telecom billing platform designed for operators, resellers and service providers.
+   Its modular architecture enables accurate usage rating, real time processing and dependable invoicing while efficiently
+   handling large scale volumes of voice, messaging and data traffic. </p>
+<div class="hero-actions">
+<button class="primary-btn" id="openDemo">
+Request Demo
+</button>
+</div>
 
-  </div>
+</div>
 
-  <div class="hero-visual"></div>
+<div class="hero-visual">
+<canvas id="engine-canvas"></canvas>
+</div>
+
+</div>
 
 </section>
 
@@ -81,29 +118,20 @@
 
 <form id="demoForm" class="zb-demo-form">
 
-<!-- NAME -->
-
 <div class="zb-grid">
-
 <input type="text" placeholder="First Name" required>
 <input type="text" placeholder="Last Name" required>
-
 </div>
-
-
-<!-- PHONE + EMAIL -->
 
 <div class="zb-grid">
 
 <div class="zb-phone">
 
 <select class="zb-country">
-
 <option value="+1">+1</option>
 <option value="+44">+44</option>
 <option value="+91" selected>+91</option>
 <option value="+971">+971</option>
-
 </select>
 
 <input type="tel" placeholder="Mobile Number" required>
@@ -114,25 +142,15 @@
 
 </div>
 
-
-<!-- COMPANY FULL WIDTH -->
-
 <input class="zb-company" type="text" placeholder="Company Name">
 
-
-<!-- CONSENT -->
-
 <div class="zb-consent">
-
 <input type="checkbox" required>
-
 <p>
 By submitting this request you agree that ZettaBiller may contact you via phone,
 SMS or email regarding your demo request.
 </p>
-
 </div>
-
 
 <button type="submit" class="zb-submit">
 Submit Demo Request
@@ -140,24 +158,20 @@ Submit Demo Request
 
 </form>
 
-
-<!-- SUCCESS -->
-
 <div id="demoSuccess" class="zb-success">
 
 <div class="zb-check">✓</div>
 
 <h3>Request Submitted</h3>
 
-<p id="refText"></p>
-
 <p class="zb-note">
-We will contact you soon. You are one step closer to experiencing a powerful telecom billing environment.
+Our team will contact you shortly to schedule your demo.
 </p>
 
 </div>
 
 </div>
+
 </div>
 
 <!-- WHO IT IS FOR -->
@@ -229,16 +243,29 @@ We will contact you soon. You are one step closer to experiencing a powerful tel
   </div>
 </section>
 
-<!-- SALES CTA -->
-<section>
-  <div class=cta>
-    <h2>Talk to Us About Your Billing Requirements</h2>
-    <p class=section-sub>
-      ZettaBiller is sold via direct engagement to ensure the right fit.
-    </p>
-    <button class=primary-btn>Contact Sales</button>
-  </div>
+<!-- ZETTA ENGINE SECTION -------------->
+<section class="zetta-engine-section">
+
+<div class="zetta-glow"></div>
+
+<div class="zetta-engine-card">
+
+<h2 class="zetta-liquid-title">
+Ready to transform your telecom billing platform into reality
+</h2>
+
+<p class="zetta-engine-desc">
+ZettaBiller powers telecom operators with automated rating, charging and revenue infrastructure built for scale.
+</p>
+
+<button class="zetta-engine-btn" id="openDemo">
+Get Started
+</button>
+
+</div>
+
 </section>
+  <!-- Footer / Description -->
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -295,32 +322,6 @@ We will contact you soon. You are one step closer to experiencing a powerful tel
 
   </div>
 </footer>
-<!-- Partner Access Modal -->
-<div class="modal" id="signInModal">
-  <div class="modal-surface">
 
-    <div class="modal-header">
-      <h1>ZettaBiller Partner Access</h1>
-      <p>Continue to your ZettaBiller workspace</p>
-    </div>
-
-    <div class="workspace-input">
-      <input
-        type="text"
-        id="companyInput"
-        placeholder="yourcompany"
-        autocomplete="off"
-      />
-      <span>.zettabiller.com</span>
-    </div>
-
-    <button id="continueBtn" class="continue-btn">
-      Continue
-    </button>
-
-    <div class="browser-note" id="browserNote"></div>
-
-  </div>
-</div>
 
 <script src="assets/js/main.js"></script>
