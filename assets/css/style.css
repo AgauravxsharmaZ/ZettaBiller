@@ -1,5 +1,5 @@
 /* =====================================================
-   ZETTABILLER - Premium Professional Theme
+   ZETTABILLER - UI
 ===================================================== */
 
 :root {
@@ -143,12 +143,13 @@ HEADER
 /* =====================================================
 HERO
 ===================================================== */
-
+/* HERO SECTION */
 .hero {
     padding: 80px 24px;
     background: var(--bg-page);
 }
 
+/* Keep your grid – it works well */
 .hero-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -162,49 +163,63 @@ HERO
     max-width: 600px;
 }
 
-/* Headline */
+/* Professional Billing Headline */
 .hero h1 {
-    font-size: 40px;
-    line-height: 1.1;
-    letter-spacing: -0.5px;
+    font-size: 44px;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
     color: var(--text-heading);
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     font-weight: 700;
 }
 
-/* Gradient Highlight */
-.hero span {
+/* Gradient Highlight (keep your effect) */
+.hero h1 span {
     background: linear-gradient(90deg, #4f6bff, #7c3aed, #ff5bc6, #ff7259);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Hero Paragraph */
+/* Long descriptive billing paragraphs */
 .hero p {
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-body);
-    margin-bottom: 32px;
-    max-width: 500px;
+    margin-bottom: 24px;
+    max-width: 520px;
 }
 
-/* Button */
+/* CTA Button */
 .primary-btn {
-    padding: 12px 24px;
+    padding: 14px 30px;
     background: var(--color-primary);
     color: #ffffff;
-    border-radius: 8px;
+    border-radius: 10px;
     border: none;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 15px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 .primary-btn:hover {
     background: var(--color-primary-hover);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-soft);
+}
+
+/* Canvas area */
+.hero-visual {
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#towerCanvas {
+    width: 100%;
+    height: 100%;
 }
 
 /* =====================================================
@@ -784,7 +799,7 @@ MODALS
     }
 }
 /* =====================================================
-   ZETTABILLER ENGINE SECTION (EVENT SECTION)
+   ZETTABILLER EVENT SECTION 
 ===================================================== */
 
 /* Event Section */
@@ -1003,18 +1018,20 @@ FOOTER
     border-top: 1px solid var(--border-light);
 }
 
+/* Main grid: Brand + 5 columns */
 .footer-inner {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
     gap: 48px;
-    margin-bottom: 48px;
     padding-bottom: 48px;
     border-bottom: 1px solid var(--border-light);
 }
 
-/* Footer Brand Section */
+/* ==========================================
+   BRAND SECTION
+========================================== */
 .footer-brand {
     display: flex;
     flex-direction: column;
@@ -1040,7 +1057,9 @@ FOOTER
     margin-top: 8px;
 }
 
-/* Footer Columns */
+/* ==========================================
+   COLUMNS
+========================================== */
 .footer-col {
     display: flex;
     flex-direction: column;
@@ -1052,25 +1071,23 @@ FOOTER
     font-weight: 700;
     color: var(--text-heading);
     letter-spacing: -0.2px;
+    margin-bottom: 4px;
 }
 
 .footer-col a {
     font-size: 13px;
     color: var(--text-body);
-    transition: color 0.2s ease;
     text-decoration: none;
+    transition: 0.2s ease;
 }
 
 .footer-col a:hover {
     color: var(--color-primary);
 }
 
-/* Footer Bottom - Legal & Copyright */
-.footer-bottom {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
+/* ==========================================
+   LEGAL COLUMN
+========================================== */
 .footer-legal {
     display: flex;
     flex-direction: column;
@@ -1081,7 +1098,6 @@ FOOTER
     font-size: 13px;
     font-weight: 700;
     color: var(--text-heading);
-    letter-spacing: -0.2px;
 }
 
 .footer-legal-links {
@@ -1093,36 +1109,35 @@ FOOTER
 .footer-legal-links a {
     font-size: 13px;
     color: var(--text-body);
-    transition: color 0.2s ease;
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .footer-legal-links a:hover {
     color: var(--color-primary);
 }
 
-/* =====================================================
-RESPONSIVE
-===================================================== */
+/* Hide unused old block */
+.footer-bottom {
+    display: none;
+}
 
+/* ==========================================
+   RESPONSIVE
+========================================== */
 @media (max-width: 768px) {
     .site-footer {
         padding: 48px 20px;
     }
 
     .footer-inner {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; 
         gap: 32px;
-        margin-bottom: 32px;
         padding-bottom: 32px;
     }
 
     .footer-brand {
         grid-column: 1 / -1;
-    }
-
-    .footer-legal-links {
-        gap: 10px;
     }
 }
 
@@ -1134,7 +1149,6 @@ RESPONSIVE
     .footer-inner {
         grid-template-columns: 1fr;
         gap: 24px;
-        margin-bottom: 24px;
         padding-bottom: 24px;
     }
 
@@ -1142,47 +1156,4 @@ RESPONSIVE
         flex-direction: column;
         gap: 8px;
     }
-}
-
-.site-footer {
-    background: var(--bg-page);
-    padding: 20px 10px;
-    border-top: 1px solid var(--border-light);
-}
-
-/* Make room for Legal as part of the same grid */
-.footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-
-    /* If you had 4 columns, add one for Legal */
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    gap: 48px;
-
-    /* remove line & spacing used for the old bottom section */
-    border-bottom: none;
-}
-
-/* Reuse your existing styles */
-.footer-col,
-.footer-legal {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* Remove the now-unused block entirely */
-.footer-bottom { display: none; }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .site-footer { padding: 48px 20px; }
-    .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
-    .footer-brand { grid-column: 1 / -1; }
-}
-@media (max-width: 480px) {
-    .site-footer { padding: 40px 16px; }
-    .footer-inner { grid-template-columns: 1fr; gap: 24px; }
-    .footer-legal-links { flex-direction: column; gap: 8px; }
 }

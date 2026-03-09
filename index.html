@@ -74,34 +74,38 @@ class="site-logo">
 </div>
 
 <!-- HERO SECTION -->
-
+<!-- HERO SECTION -->
 <section class="hero">
+    <div class="hero-inner">
 
-<div class="hero-inner">
+        <!-- LEFT (copy) -->
+        <div class="hero-copy">
+            <h1>
+                <span>Built for Accuracy. Scaled for Volume. Engineered for Telecom.</span>
+            </h1>
 
-<div class="hero-copy">
+            <p>
+                ZettaBiller is an enterprise‑grade billing and mediation platform built for telecom operators, MVNOs,
+                ISPs, resellers and digital service providers. Designed to handle millions of CDRs/EDRs per hour, it ensures
+                real‑time usage rating, intelligent mediation, automated invoicing and airtight revenue assurance.
+            </p>
 
-<h1>
-  <span>Built for Accuracy. Scaled for Volume. Designed for Control.</span>
-</h1>
+            <p>
+                With high‑performance architecture and deep audit visibility, ZettaBiller gives you complete control over
+                every call, message, byte, charge and contract — empowering your network to grow without limits.
+            </p>
 
-<p> ZettaBiller is a high performance telecom billing platform designed for operators, resellers and service providers.
-   Its modular architecture enables accurate usage rating, real time processing and dependable invoicing while efficiently
-   handling large scale volumes of voice, messaging and data traffic. </p>
-<div class="hero-actions">
-<button class="primary-btn" id="openDemo">
-Request Demo
-</button>
-</div>
+            <div class="hero-actions">
+                <button class="primary-btn" id="openDemo">Request Demo</button>
+            </div>
+        </div>
 
-</div>
+        <!-- RIGHT (canvas animation) -->
+        <div class="hero-visual">
+            <canvas id="towerCanvas"></canvas>
+        </div>
 
-<div class="hero-visual">
-<canvas id="engine-canvas"></canvas>
-</div>
-
-</div>
-
+    </div>
 </section>
 
 <!-- REQUEST DEMO MODAL -->
@@ -299,7 +303,7 @@ Our team will contact you shortly to schedule your demo.
   </div>
 </section>
 
-<!-- ZETTA ENGINE SECTION -------------->
+<!-- ZETTA EVENT SECTION -------------->
 <section class="event-section">
 
 <div class="event-card">
@@ -365,62 +369,75 @@ Know More
 </section>
 
   <!-- Footer / Description -->
-
 <footer class="site-footer">
   <div class="footer-inner">
 
-    <!-- Brand / Description -->
-    <div class="footer-brand">
+    <!-- Brand -->
+    <section class="footer-brand">
       <div class="footer-logo">ZettaBiller</div>
       <p class="footer-desc">
-        Enterprise-grade telecom billing platform built for
-        accuracy, auditability, and scale.
+        A next‑generation billing platform built for automation, accuracy, and enterprise‑scale revenue operations.
       </p>
-      <div class="footer-copy">
-        © 2026 ZettaBiller . All rights reserved.
-      </div>
-    </div>
+      <p class="footer-copyright">© 2026 ZettaBiller</p>
+    </section>
 
-    <!-- Product / Menu -->
-    <div class="footer-col">
-      <h4>Product</h4>
-      <a href="#">Product Overview</a>
+    <!-- What's New -->
+    <nav class="footer-col">
+      <h4>What’s New</h4>
+      <a href="#">ZettaBiller Cloud</a>
       <a href="#">Billing Engine</a>
-      <a href="#">Rating & Mediation</a>
-      <a href="#">Invoicing</a>
-      <a href="#">Pricing</a>
-    </div>
+      <a href="#">AI Revenue Insights</a>
+      <a href="#">Usage Rating</a>
+      <a href="#">Invoice Automation</a>
+      <a href="#">Release Notes</a>
+    </nav>
 
-    <!-- Company -->
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="#">About</a>
-      <a href="#">Customers</a>
-      <a href="#">Careers</a>
-      <a href="#">Blog & Press</a>
-      <a href="#">Contact</a>
-    </div>
+    <!-- Store -->
+    <nav class="footer-col">
+      <h4>ZettaBiller Store</h4>
+      <a href="#">Account Profile</a>
+      <a href="#">Subscriptions</a>
+      <a href="#">Integration Add‑ons</a>
+      <a href="#">API Documentation</a>
+      <a href="#">Download Center</a>
+      <a href="#">Support</a>
+    </nav>
 
-    <!-- Support -->
-    <div class="footer-col">
-      <h4>Support</h4>
-      <a href="#">Documentation</a>
-      <a href="#">Implementation</a>
-      <a href="#">Support Portal</a>
-      <a href="#">Status</a>
-    </div>
+    <!-- Business -->
+    <nav class="footer-col">
+      <h4>Business</h4>
+      <a href="#">Enterprise Suite</a>
+      <a href="#">Revenue Assurance</a>
+      <a href="#">Fraud & Leakage Control</a>
+      <a href="#">Automation Engine</a>
+      <a href="#">Usage‑Based Billing</a>
+      <a href="#">Analytics</a>
+    </nav>
+
+    <!-- Developer & IT -->
+    <nav class="footer-col">
+      <h4>Developer & IT</h4>
+      <a href="#">Developer Docs</a>
+      <a href="#">Sandbox</a>
+      <a href="#">API Reference</a>
+      <a href="#">Webhooks & Events</a>
+      <a href="#">Integration Marketplace</a>
+      <a href="#">System Status</a>
+    </nav>
 
     <!-- Legal -->
-    <div class="footer-col">
+    <section class="footer-legal">
       <h4>Legal</h4>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Security</a>
-      <a href="#">Compliance</a>
-    </div>
+      <div class="footer-legal-links">
+        <a href="#">Privacy</a>
+        <a href="#">Security</a>
+        <a href="#">Terms</a>
+        <a href="#">Data Protection</a>
+        <a href="#">Cookies</a>
+        <a href="#">Contact</a>
+      </div>
+    </section>
 
   </div>
 </footer>
-
-
 <script src="assets/js/main.js"></script>
