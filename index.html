@@ -10,13 +10,7 @@
 
 <body>
 
-<!-- Announcement Bar -->
-<div class="announcement-bar">
-  <span>✨ Product update: simplified pricing is live</span>
-  <a href="#">Learn more →</a>
-</div>
-<div class="top-accent"></div>
-<!-- Logo -->
+  <!-- Logo -->
 <header class="site-header">
 <div class="header-left">
 <img 
@@ -49,8 +43,13 @@ class="site-logo">
 
     <button class="modal-close" id="closeSignIn">✕</button>
 
+    <!-- Professional Logo Addition -->
+    <div class="modal-logo">
+      <img src="assets/images/logo.png" alt="ZettaBiller Logo" class="modal-logo-img">
+    </div>
+
     <h1 class="modal-title">ZettaBiller Partner Access</h1>
-    <p class="modal-sub">Continue to your ZettaBiller workspace</p>
+    <p class="modal-sub">Continue to your ZettaBiller Workspace</p>
 
     <div class="workspace-input">
       <input
@@ -129,8 +128,8 @@ Request Demo
 
 <select class="zb-country">
 <option value="+1">+1</option>
-<option value="+44">+44</option>
-<option value="+91" selected>+91</option>
+<option value="+44" selected>+44</option>
+<option value="+91">+91</option>
 <option value="+971">+971</option>
 </select>
 
@@ -175,71 +174,128 @@ Our team will contact you shortly to schedule your demo.
 </div>
 
 <!-- WHO IT IS FOR -->
-<section>
-  <h2 class=section-title>Who ZettaBiller Is Built For</h2>
-  <p class=section-sub>
-    Designed specifically for telecom environments where accuracy and control matter.
-  </p>
+<section class="who-section">
+  <div class="section-container">
+    <h2 class="section-title">Who ZettaBiller Is Built For</h2>
+    <p class="section-sub">
+      Designed specifically for telecom environments where accuracy and control matter.
+    </p>
 
-  <div class=card-grid>
-    <div class=card>
-      <h3>Wholesale Telecom Operators</h3>
-      <p>High-volume CDR processing with reconciliation and audit control.</p>
-    </div>
-    <div class=card>
-      <h3>ISPs and Virtual Operators</h3>
-      <p>Usage-based billing, recurring charges, and flexible tariff models.</p>
-    </div>
-    <div class=card>
-      <h3>Enterprise Billing Teams</h3>
-      <p>Configurable rating logic without code changes.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">📡</div>
+        <h3>Wholesale Telecom Operators</h3>
+        <p>High-volume CDR processing with reconciliation and audit control.</p>
+        <a href="#" class="section-btn">Learn More</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h3>ISPs and Virtual Operators</h3>
+        <p>Usage-based billing, recurring charges, and flexible tariff models.</p>
+        <a href="#" class="section-btn">Learn More</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏢</div>
+        <h3>Enterprise Billing Teams</h3>
+        <p>Configurable rating logic without code changes.</p>
+        <a href="#" class="section-btn">Learn More</a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- BILLING FLOW -->
-<section>
-  <h2 class=section-title>End-to-End Billing Engine</h2>
-  <p class=section-sub>
-    A clear and controlled telecom billing lifecycle.
-  </p>
+<section class="flow-section">
+  <div class="section-container">
+    <h2 class="section-title">End-to-End Billing Engine</h2>
+    <p class="section-sub">
+      A clear and controlled telecom billing lifecycle.
+    </p>
 
-  <div class=flow>
-    <div class=flow-step>Usage Ingestion</div>
-    <div class=flow-step>Rating</div>
-    <div class=flow-step>Billing</div>
-    <div class=flow-step>Invoicing</div>
-    <div class=flow-step>Reporting</div>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-icon">📥</div>
+        <h4>Usage Ingestion</h4>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-icon">⚖️</div>
+        <h4>Rating</h4>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-icon">💰</div>
+        <h4>Billing</h4>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-icon">📄</div>
+        <h4>Invoicing</h4>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-icon">📊</div>
+        <h4>Reporting</h4>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- WHY ZETTABILLER -->
-<section>
-  <h2 class=section-title>Why ZettaBiller</h2>
-  <p class=section-sub>
-    Built for telecom complexity, not generic subscription billing.
-  </p>
+<section class="why-section">
+  <div class="section-container">
+    <h2 class="section-title">Why ZettaBiller</h2>
+    <p class="section-sub">
+      Built for telecom complexity, not generic subscription billing.
+    </p>
 
-  <div class=checklist>
-    <div class=check>Designed for telecom usage models</div>
-    <div class=check>Multi-tenant architecture with isolation</div>
-    <div class=check>Config-driven rating logic</div>
-    <div class=check>Audit-friendly billing workflows</div>
+    <div class="checklist">
+      <div class="check">
+        <div class="check-icon">✓</div>
+        <span>Designed for telecom usage models</span>
+      </div>
+      <div class="check">
+        <div class="check-icon">✓</div>
+        <span>Multi-tenant architecture with isolation</span>
+      </div>
+      <div class="check">
+        <div class="check-icon">✓</div>
+        <span>Config-driven rating logic</span>
+      </div>
+      <div class="check">
+        <div class="check-icon">✓</div>
+        <span>Audit-friendly billing workflows</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ENTERPRISE READINESS -->
-<section>
-  <h2 class=section-title>Enterprise Ready by Design</h2>
-  <p class=section-sub>
-    Security, control, and scalability are first-class concerns.
-  </p>
+<section class="enterprise-section">
+  <div class="section-container">
+    <h2 class="section-title">Enterprise Ready by Design</h2>
+    <p class="section-sub">
+      Security, control, and scalability are first-class concerns.
+    </p>
 
-  <div class=checklist>
-    <div class=check>Tenant-level data isolation</div>
-    <div class=check>Role-based access ready</div>
-    <div class=check>Usage and billing audit trails</div>
-    <div class=check>Cloud or on-prem deployment flexibility</div>
+    <div class="checklist">
+      <div class="check">
+        <div class="check-icon">✓</div>
+        <span>Tenant-level data isolation</span>
+      </div>
+      <div class="check">
+        <div class="check-icon">✓</div>
+        <span>Role-based access ready</span>
+      </div>
+      <div class="check">
+        <div class="check-icon">✓</div>
+        <span>Usage and billing audit trails</span>
+      </div>
+      <div class="check">
+        <div class="check-icon">✓</div>
+        <span>Cloud or on-prem deployment flexibility</span>
+      </div>
+    </div>
   </div>
 </section>
 
