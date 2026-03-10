@@ -73,302 +73,346 @@ class="site-logo">
 
 </div>
 
+<!-- REQUEST A DEMO MODAL -->
+<div id="demoModal" class="zb-demo-modal" role="dialog" aria-modal="true" aria-labelledby="demoTitle" hidden>
+
+  <div class="zb-demo-card" role="document">
+
+    <!-- Header -->
+    <div class="zb-demo-header">
+      <h2 id="demoTitle">Request a Demo</h2>
+      <button id="closeDemo" class="zb-demo-close" aria-label="Close">✕</button>
+    </div>
+
+    <!-- FORM -->
+    <form id="demoForm" class="zb-demo-form" novalidate>
+
+      <!-- Name Grid -->
+      <div class="zb-grid">
+        <input type="text" name="firstName" placeholder="First Name" required>
+        <input type="text" name="lastName" placeholder="Last Name" required>
+      </div>
+
+      <!-- Phone + Email Grid -->
+      <div class="zb-grid">
+
+        <!-- Phone Block -->
+        <div class="zb-phone">
+          <select name="countryCode" class="zb-country">
+            <option value="+1">+1</option>
+            <option value="+44" selected>+44</option>
+            <option value="+91">+91</option>
+            <option value="+971">+971</option>
+          </select>
+
+          <input type="tel" name="mobile" placeholder="Mobile Number" required>
+        </div>
+
+        <!-- Email -->
+        <input type="email" name="workEmail" placeholder="Work Email" required>
+      </div>
+
+      <!-- Company -->
+      <input class="zb-company" type="text" name="company" placeholder="Company Name">
+
+      <!-- Consent -->
+      <div class="zb-consent">
+        <input id="demoConsent" type="checkbox" required>
+        <label for="demoConsent">
+          By submitting this request, you agree that ZettaBiller may contact you via phone,
+          SMS, or email regarding your demo request.
+        </label>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="zb-btn zb-btn--primary zb-submit">
+        Submit Demo Request
+      </button>
+
+    </form>
+
+    <!-- SUCCESS STATE -->
+    <div id="demoSuccess" class="zb-success" hidden>
+      <div class="zb-check">✓</div>
+      <h3>Request Submitted</h3>
+      <p class="zb-note">
+        Our team will contact you shortly to schedule your demo.
+      </p>
+    </div>
+
+  </div>
+</div>
+
 <!-- HERO SECTION -->
-<!-- HERO SECTION -->
-<section class="hero">
-    <div class="hero-inner">
+<section class="zb-hero" aria-labelledby="zb-hero-title">
+  <div class="zb-hero-wrap">
+    <div class="zb-hero-grid">
 
-        <!-- LEFT (copy) -->
-        <div class="hero-copy">
-            <h1>
-                <span>Built for Accuracy. Scaled for Volume. Engineered for Telecom.</span>
-            </h1>
+      <!-- LEFT: COPY -->
+      <div class="zb-hero-content">
+        <h1 class="zb-hero-title" id="zb-hero-title">
+          Billing Platform <span class="zb-accent">Built for Revenue</span>
+        </h1>
 
-            <p>
-                ZettaBiller is an enterprise‑grade billing and mediation platform built for telecom operators, MVNOs,
-                ISPs, resellers and digital service providers. Designed to handle millions of CDRs/EDRs per hour, it ensures
-                real‑time usage rating, intelligent mediation, automated invoicing and airtight revenue assurance.
-            </p>
+        <p class="zb-hero-sub">
+          Real‑time rating, automated RPI, and revenue assurance. Streamlined runs, clean exceptions, and
+          collections you can trust — engineered for scale.
+        </p>
 
-            <p>
-                With high‑performance architecture and deep audit visibility, ZettaBiller gives you complete control over
-                every call, message, byte, charge and contract — empowering your network to grow without limits.
-            </p>
+        <div class="zb-hero-chips" role="list">
+          <span class="zb-chip" role="listitem">Live MRR/ARPU</span>
+          <span class="zb-chip" role="listitem">Exception queues</span>
+          <span class="zb-chip" role="listitem">Collections control</span>
+        </div>
+           <div class="zb-hero-ctas">
+            <a class="zb-btn zb-btn--primary" id="openDemo" href="#request-a-demo">Request a Demo</a>
+            <a class="zb-btn zb-btn--ghost" href="#watchlaunch">Watch Launch</a>
+          </div>
+        </div>
 
-            <div class="hero-actions">
-                <button class="primary-btn" id="openDemo">Request Demo</button>
+      <!-- RIGHT: REVENUE CARD (live/animated) -->
+      <div class="zb-hero-visual" aria-hidden="false">
+        <article class="zb-rev-card" aria-label="Live revenue overview">
+
+          <!-- Card header -->
+          <header class="zb-rc-header">
+            <span class="zb-rc-title">Revenue Overview</span>
+            <span class="zb-rc-pill" aria-live="polite">LIVE</span>
+          </header>
+
+          <!-- MRR (animated number + sparkline) -->
+          <div class="zb-rc-mrr">
+            <div class="zb-rc-mrr-meta">
+              <span class="zb-rc-label">Monthly Recurring Revenue</span>
+              <span class="zb-rc-trend zb-up">+3.1% MoM</span>
             </div>
+
+            <div class="zb-rc-mrr-value">
+              <span class="zb-cur">£</span>
+              <!-- For real count-up, set data-target and use the optional JS below -->
+              <span class="zb-odometer" data-target="1289400">1,289,400</span>
+            </div>
+
+            <!-- Sparkline (CSS animated draw) -->
+            <figure class="zb-sparkline" aria-label="Revenue sparkline">
+              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="zbLineGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--color-primary)" stop-opacity="0.55"/>
+                    <stop offset="100%" stop-color="var(--color-primary)" stop-opacity="0.05"/>
+                  </linearGradient>
+                </defs>
+                <!-- Fill area -->
+                <path class="fill"
+                      d="M0,28 L10,26 L20,24 L30,18 L40,22 L50,15 L60,20 L70,12 L80,16 L90,10 L100,14 L110,9 L120,12 L120,36 L0,36 Z"
+                      fill="url(#zbLineGrad)"/>
+                <!-- Stroke line -->
+                <path class="line"
+                      d="M0,28 L10,26 L20,24 L30,18 L40,22 L50,15 L60,20 L70,12 L80,16 L90,10 L100,14 L110,9 L120,12"
+                      fill="none" stroke="var(--color-primary)" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </figure>
+          </div>
+
+          <!-- KPI row -->
+          <div class="zb-rc-kpis">
+            <div class="zb-kpi">
+              <span class="zb-kpi-label">ARPU</span>
+              <span class="zb-kpi-value" data-target="42.80">£42.80</span>
+              <span class="zb-kpi-note zb-up">+0.6%</span>
+            </div>
+            <div class="zb-kpi">
+              <span class="zb-kpi-label">Invoices Today</span>
+              <span class="zb-kpi-value" data-target="68944">68,944</span>
+              <span class="zb-kpi-note zb-ok">On‑track</span>
+            </div>
+            <div class="zb-kpi">
+              <span class="zb-kpi-label">Collections</span>
+              <span class="zb-kpi-value" data-target="97.4">97.4%</span>
+              <span class="zb-kpi-note zb-up">+0.4%</span>
+            </div>
+            <div class="zb-kpi">
+              <span class="zb-kpi-label">Churn (30d)</span>
+              <span class="zb-kpi-value" data-target="1.3">1.3%</span>
+              <span class="zb-kpi-note zb-down">‑0.2%</span>
+            </div>
+          </div>
+
+          <!-- Billing events ticker -->
+          <div class="zb-rc-ticker" aria-label="Recent billing events">
+            <ul class="zb-ticker-track">
+              <li>• Invoice Run - Adhoc 27-Mar-2027 completed — 12,406 docs</li>
+              <li>• DD collection window opened — 09:00 IST</li>
+              <li>• 38 exceptions queued — 92% auto‑resolved</li>
+              <li>• RPI uplift batch (dry‑run) ready</li>
+              <li>• Collections pass rate 97.4% — +0.4%</li>
+            </ul>
+          </div>
+
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ZETTA Built for Modern Telecom Billing -------------->
+
+<section class="zb-after-hero" aria-labelledby="zb-ah-title">
+  <div class="zb-ah-wrap">
+
+    <!-- Header -->
+    <header class="zb-ah-header">
+      <h2 class="zb-ah-title" id="zb-ah-title">
+        Built for Modern Telecom Billing
+      </h2>
+      <p class="zb-ah-sub">
+        Carrier‑grade rating, automation, and revenue assurance—engineered for scale.
+      </p>
+
+      <!-- Quick info chips -->
+      <div class="zb-ah-metrics" role="list">
+        <span class="zb-chip" role="listitem">99.99% uptime</span>
+        <span class="zb-chip" role="listitem">Real‑time CDR rating</span>
+        <span class="zb-chip" role="listitem">RPI‑ready automation</span>
+      </div>
+    </header>
+
+    <!-- Smooth cards -->
+    <div class="zb-ah-grid">
+
+      <!-- Card 1 -->
+      <article class="zb-ah-card">
+        <div class="zb-ah-icon" aria-hidden="true">
+          <!-- Wave / 5G style icon -->
+          <svg viewBox="0 0 24 24" fill="none" width="24" height="24" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 12c3-5 15-5 18 0" />
+            <path d="M6 12c2.5-3 9.5-3 12 0" />
+            <path d="M9 12c2-1 4-1 6 0" />
+          </svg>
         </div>
+        <h3 class="zb-ah-card-title">Real‑Time Rating & Mediation</h3>
+        <p class="zb-ah-card-desc">
+          Process CDRs/EDRs in near real‑time with resilient mediation and precise rating for usage‑based, recurring, and one‑off charges.
+        </p>
+        <ul class="zb-ah-list">
+          <li>Streaming mediation pipeline</li>
+          <li>Low‑latency rating engine</li>
+        </ul>
+      </article>
 
-        <!-- RIGHT (canvas animation) -->
-        <div class="hero-visual">
-            <canvas id="towerCanvas"></canvas>
+      <!-- Card 2 -->
+      <article class="zb-ah-card">
+        <div class="zb-ah-icon" aria-hidden="true">
+          <!-- Price / RPI icon -->
+          <svg viewBox="0 0 24 24" fill="none" width="24" height="24" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="4" width="18" height="14" rx="2"></rect>
+            <path d="M7 8h10M7 12h6M7 16h4"></path>
+          </svg>
         </div>
+        <h3 class="zb-ah-card-title">Automated RPI & Tariff Uplift</h3>
+        <p class="zb-ah-card-desc">
+          Apply annual RPI uplifts with audit trails, exception handling, and rollback—no manual spreadsheets or risky bulk edits.
+        </p>
+        <ul class="zb-ah-list">
+          <li>Dry‑run previews & deltas</li>
+          <li>Selective exemptions</li>
+        </ul>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="zb-ah-card">
+        <div class="zb-ah-icon" aria-hidden="true">
+          <!-- Shield / assurance icon -->
+          <svg viewBox="0 0 24 24" fill="none" width="24" height="24" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"></path>
+            <path d="M9.5 12l1.8 1.8 3.2-3.2"></path>
+          </svg>
+        </div>
+        <h3 class="zb-ah-card-title">Revenue Assurance & Controls</h3>
+        <p class="zb-ah-card-desc">
+          Detect leakages, shortfalls, and duplicate bill issues with proactive controls and reconciliation dashboards.
+        </p>
+        <ul class="zb-ah-list">
+          <li>Exception queues</li>
+          <li>Root‑cause insights</li>
+        </ul>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="zb-ah-card">
+        <div class="zb-ah-icon" aria-hidden="true">
+          <!-- Integrations / API icon -->
+          <svg viewBox="0 0 24 24" fill="none" width="24" height="24" stroke="currentColor" stroke-width="1.8">
+            <circle cx="6" cy="6" r="2"></circle>
+            <circle cx="18" cy="6" r="2"></circle>
+            <circle cx="6" cy="18" r="2"></circle>
+            <circle cx="18" cy="18" r="2"></circle>
+            <path d="M8 6h8M6 8v8M18 8v8M8 18h8"></path>
+          </svg>
+        </div>
+        <h3 class="zb-ah-card-title">Integrations & APIs</h3>
+        <p class="zb-ah-card-desc">
+          Seamless handshakes with Salesforce, Affinity, payments, and carriers—clean APIs and event webhooks baked‑in.
+        </p>
+        <ul class="zb-ah-list">
+          <li>Bulk ops with review gates</li>
+          <li>Audit everywhere</li>
+        </ul>
+      </article>
 
     </div>
-</section>
 
-<!-- REQUEST DEMO MODAL -->
-
-<div id="demoModal" class="zb-demo-modal">
-
-<div class="zb-demo-card">
-
-<div class="zb-demo-header">
-<h2>Request a Demo</h2>
-<span id="closeDemo" class="zb-demo-close">✕</span>
-</div>
-
-<form id="demoForm" class="zb-demo-form">
-
-<div class="zb-grid">
-<input type="text" placeholder="First Name" required>
-<input type="text" placeholder="Last Name" required>
-</div>
-
-<div class="zb-grid">
-
-<div class="zb-phone">
-
-<select class="zb-country">
-<option value="+1">+1</option>
-<option value="+44" selected>+44</option>
-<option value="+91">+91</option>
-<option value="+971">+971</option>
-</select>
-
-<input type="tel" placeholder="Mobile Number" required>
-
-</div>
-
-<input type="email" placeholder="Work Email" required>
-
-</div>
-
-<input class="zb-company" type="text" placeholder="Company Name">
-
-<div class="zb-consent">
-<input type="checkbox" required>
-<p>
-By submitting this request you agree that ZettaBiller may contact you via phone,
-SMS or email regarding your demo request.
-</p>
-</div>
-
-<button type="submit" class="zb-submit">
-Submit Demo Request
-</button>
-
-</form>
-
-<div id="demoSuccess" class="zb-success">
-
-<div class="zb-check">✓</div>
-
-<h3>Request Submitted</h3>
-
-<p class="zb-note">
-Our team will contact you shortly to schedule your demo.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- WHO IT IS FOR -->
-<section class="who-section">
-  <div class="section-container">
-    <h2 class="section-title">Who ZettaBiller Is Built For</h2>
-    <p class="section-sub">
-      Designed specifically for telecom environments where accuracy and control matter.
-    </p>
-
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-icon">📡</div>
-        <h3>Wholesale Telecom Operators</h3>
-        <p>High-volume CDR processing with reconciliation and audit control.</p>
-        <a href="#" class="section-btn">Learn More</a>
-      </div>
-      <div class="card">
-        <div class="card-icon">🌐</div>
-        <h3>ISPs and Virtual Operators</h3>
-        <p>Usage-based billing, recurring charges, and flexible tariff models.</p>
-        <a href="#" class="section-btn">Learn More</a>
-      </div>
-      <div class="card">
-        <div class="card-icon">🏢</div>
-        <h3>Enterprise Billing Teams</h3>
-        <p>Configurable rating logic without code changes.</p>
-        <a href="#" class="section-btn">Learn More</a>
-      </div>
+    <!-- CTA Row (optional) -->
+    <div class="zb-ah-cta">
+      <a class="zb-ah-btn" href="#features">Explore Features</a>
+      <a class="zb-ah-link" href="#integrations">View Integration Map →</a>
     </div>
-  </div>
-</section>
 
-<!-- BILLING FLOW -->
-<section class="flow-section">
-  <div class="section-container">
-    <h2 class="section-title">End-to-End Billing Engine</h2>
-    <p class="section-sub">
-      A clear and controlled telecom billing lifecycle.
-    </p>
-
-    <div class="flow">
-      <div class="flow-step">
-        <div class="step-icon">📥</div>
-        <h4>Usage Ingestion</h4>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step">
-        <div class="step-icon">⚖️</div>
-        <h4>Rating</h4>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step">
-        <div class="step-icon">💰</div>
-        <h4>Billing</h4>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step">
-        <div class="step-icon">📄</div>
-        <h4>Invoicing</h4>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step">
-        <div class="step-icon">📊</div>
-        <h4>Reporting</h4>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY ZETTABILLER -->
-<section class="why-section">
-  <div class="section-container">
-    <h2 class="section-title">Why ZettaBiller</h2>
-    <p class="section-sub">
-      Built for telecom complexity, not generic subscription billing.
-    </p>
-
-    <div class="checklist">
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <span>Designed for telecom usage models</span>
-      </div>
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <span>Multi-tenant architecture with isolation</span>
-      </div>
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <span>Config-driven rating logic</span>
-      </div>
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <span>Audit-friendly billing workflows</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ENTERPRISE READINESS -->
-<section class="enterprise-section">
-  <div class="section-container">
-    <h2 class="section-title">Enterprise Ready by Design</h2>
-    <p class="section-sub">
-      Security, control, and scalability are first-class concerns.
-    </p>
-
-    <div class="checklist">
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <span>Tenant-level data isolation</span>
-      </div>
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <span>Role-based access ready</span>
-      </div>
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <span>Usage and billing audit trails</span>
-      </div>
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <span>Cloud or on-prem deployment flexibility</span>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- ZETTA EVENT SECTION -------------->
-<section class="event-section">
 
-<div class="event-card">
+ <section class="zb-event" aria-labelledby="zb-event-title">
+  <div class="zb-event-card">
+    <div class="zb-grid">
 
-<div class="event-grid">
+      <!-- IMAGE -->
+      <div class="zb-img-box">
+        <img src="assets/images/event.jpg" alt="ZettaBiller Update Event">
+      </div>
 
-<div class="event-image">
-<img src="assets/images/event.jpg" alt="event">
-</div>
+      <!-- CONTENT -->
+      <div class="zb-content">
+        <h2 class="zb-title" id="zb-event-title">
+          ZettaBiller <span class="zb-highlight">Update Event</span>
+        </h2>
 
-<div class="event-content">
+        <p class="zb-desc">
+          Get an exclusive look at upcoming enhancements in our telecom billing engine, automation suite,
+          and network‑ready billing intelligence.
+        </p>
 
-<h2 class="event-title">
-ZettaBiller Next <span class="rgb-apple">Update</span> Event
-</h2>
+        <div class="zb-label">Live Session</div>
+        <div class="zb-date">April 28, 2026 • 06:00 PM IST</div>
 
-<p class="event-desc">
-Something exciting is launching soon. Join the ZettaBiller team as we unveil the next evolution of our telecom billing platform.
-</p>
+        <div class="zb-countdown" aria-label="Event countdown">
+          <div class="zb-time"><span id="days">53</span><p>Days</p></div>
+          <div class="zb-time"><span id="hours">16</span><p>Hours</p></div>
+          <div class="zb-time"><span id="minutes">50</span><p>Minutes</p></div>
+          <div class="zb-time"><span id="seconds">56</span><p>Seconds</p></div>
+        </div>
 
-<div class="event-label">
-Upcoming Live Session
-</div>
+        <a class="zb-btn" href="#event-details">Know More</a>
+      </div>
 
-<div class="calendar">
-April 28 2026 • 06:00 PM IST
-</div>
-
-<div class="countdown">
-
-<div class="time">
-<span id="days">53</span>
-<p>Days</p>
-</div>
-
-<div class="time">
-<span id="hours">16</span>
-<p>Hours</p>
-</div>
-
-<div class="time">
-<span id="minutes">50</span>
-<p>Minutes</p>
-</div>
-
-<div class="time">
-<span id="seconds">56</span>
-<p>Seconds</p>
-</div>
-
-</div>
-
-<a class="event-btn" href="#">
-Know More
-</a>
-
-</div>
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
-  <!-- Footer / Description -->
+<!-- Footer / Description -->
 <footer class="site-footer">
   <div class="footer-inner">
 
