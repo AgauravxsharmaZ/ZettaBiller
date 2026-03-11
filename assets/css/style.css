@@ -145,8 +145,7 @@ LAYOUT HELPERS
 }
 
 /* =====================================================
-HERO – Revenue-first (Dark, Apple-like, animated)
-Use with your HERO HTML section (zb-hero)
+HERO – ZETTABILLER 
 ===================================================== */
 
 .zb-hero {
@@ -519,6 +518,31 @@ MODALS
 ===================================================== */
 
 /* Partner Sign In Modal */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-btn {
+  background: var(--color-primary, #3b6cff);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.primary-btn:hover {
+  background: var(--color-primary-hover, #2f55e5);
+  transform: translateY(-2px);
+}
+
+
 .modal {
     position: fixed;
     top: 0;
@@ -1207,3 +1231,4 @@ FOOTER
         gap: 8px;
     }
 }
+

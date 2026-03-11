@@ -1,0 +1,38 @@
+:root{
+  --p:#3b6cff; --p2:#2f55e5;
+  --bg:#000; --s1:#0c0f16; --s2:#131a2a; --input:#0f1420; --inputf:#121a2a;
+  --t:#e6e6e6; --tm:#aab1c3; --td:#7b8396; --line:#1b2232;
+  --shadow:0 10px 30px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.02);
+  --ring:0 0 0 3px rgba(59,108,255,.25);
+  --rxl:18px; --rlg:12px; --pad: clamp(16px,4vw,40px); --max:460px;
+}
+
+html,body{height:100%}
+body{
+  margin:0; color:var(--t);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:
+    radial-gradient(1200px 800px at 70% -10%, rgba(59,108,255,.12), transparent 60%),
+    radial-gradient(900px 600px at -10% 120%, rgba(59,108,255,.08), transparent 50%),
+    var(--bg);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  overflow: hidden; /* no scroll */
+}
+
+.zb-header{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding: 18px var(--pad);
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(14,18,28,.6), rgba(14,18,28,.25));
+  backdrop-filter: blur(6px);
+}
+.zb-brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--t) }
+.zb-brand-logo{ width:34px; height:34px; border-radius:10px; background: linear-gradient(135deg, var(--p), #8aa2ff); box-shadow: 0 6px 20px rgba(59,108,255,.35), inset 0 1px 0 rgba(255,255,255,.25) }
+.zb-brand-name{ font-weight:700; font-size:18px; letter-spacing:.4px; }
+.zb-nav{ display:flex; gap:14px; }
+.zb-link{ color:var(--tm); text-decoration:none; font-size:14px; }
+.zb-link:hover{ color:#c7cfe2; }
+
+.zb-main{ display:grid; place-items:center; padding: clamp(16px, 4vw, 48px) }
+.zb-card{
+  width:100%; max-width

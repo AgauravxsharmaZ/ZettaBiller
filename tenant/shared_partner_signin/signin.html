@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="zb-login-html">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign In — ZettaBiller</title>
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/assets/css/tenant-login.css" />
+</head>
+<body class="zb-login-body">
+  <header class="zb-header">
+    <a href="https://www.zettabiller.com" class="zb-brand">
+      <span class="zb-brand-logo"></span>
+      <span class="zb-brand-name">ZettaBiller</span>
+    </a>
+    <nav class="zb-nav">
+      <a class="zb-link" href="https://status.zettabiller.com">Status</a>
+      <a class="zb-link" href="https://www.zettabiller.com/docs">Docs</a>
+      <a class="zb-link" href="https://www.zettabiller.com/contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="zb-main">
+    <section class="zb-card" aria-label="Tenant Login">
+      <div class="zb-card-head">
+        <div class="zb-kicker"><span class="zb-dot"></span> Partner Access</div>
+        <h1 class="zb-title">Sign in to <span id="tenantName">your tenant</span></h1>
+        <p class="zb-subtitle">Use your organisation credentials. (Not a Microsoft login.)</p>
+        <p class="zb-tenant-context" id="tenantContext"></p>
+      </div>
+
+      <div class="zb-card-body">
+        <form id="zbLoginForm" class="zb-form" autocomplete="on" novalidate>
+          <div class="zb-row">
+            <label for="username" class="zb-label">Email or Username</label>
+            <div class="zb-input">
+              <span class="zb-ico" aria-hidden="true"></span>
+              <input type="text" id="username" name="username" placeholder="name@company.com or username" autocomplete="username" required />
+            </div>
+          </div>
+
+          <div class="zb-row">
+            <label for="password" class="zb-label">Password</label>
+            <div class="zb-input">
+              <span class="zb-ico" aria-hidden="true"></span>
+              <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required />
+            </div>
+          </div>
+
+          <div class="zb-two-col">
+            <label class="zb-checkbox">
+              <input type="checkbox" id="remember" name="remember" />
+              Remember me
+            </label>
+            <a class="zb-link" href="/forgot-password">Forgot password?</a>
+          </div>
+
+          <button type="submit" id="zbSubmit" class="zb-btn">Sign In</button>
+
+          <p class="zb-policy">
+            By signing in, you agree to <button type="button" class="zb-link-btn" id="openPolicy">Company Policy</button>
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="zb-footer">
+    <span>© 2026 ZettaBiller</span>
+    <span class="zb-foot-links"><a href="/legal/terms">Terms</a> · <a href="/legal/privacy">Privacy</a></span>
+  </footer>
+
+  <!-- Policy modal -->
+  <div class="zb-modal" id="policyModal" role="dialog" aria-modal="true" aria-labelledby="policyTitle" hidden>
+    <div class="zb-modal-backdrop" data-close="policyModal"></div>
+    <div class="zb-modal-card">
+      <header class="zb-modal-head">
+        <h2 id="policyTitle" class="zb-modal-title">Company Policy — <span id="policyTenant">TENANT</span></h2>
+        <button class="zb-modal-close" aria-label="Close" data-close="policyModal">✕</button>
+      </header>
+      <div class="zb-modal-body" id="policyBody">
+        <p>This is a placeholder for <strong><span id="policyTenantInline">TENANT</span></strong> policy summary.</p>
+        <ul>
+          <li>Acceptable Use &amp; Access</li>
+          <li>Data Handling &amp; Confidentiality</li>
+          <li>Billing &amp; Audit Responsibilities</li>
+        </ul>
+        <p><small>For full policy, contact your organisation administrator.</small></p>
+      </div>
+      <footer class="zb-modal-foot">
+        <button class="zb-btn-ghost" data-close="policyModal">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="/assets/js/tenant-login.js"></script>
+</body>
+</html>
+``
